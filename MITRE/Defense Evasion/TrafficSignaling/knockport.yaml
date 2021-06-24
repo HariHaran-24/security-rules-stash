@@ -19,5 +19,5 @@ spec:
     - proc.args: -dport
     - proc.args: -j      
   action:
-    Block
+    Audit
   severity: 4
