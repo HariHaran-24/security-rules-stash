@@ -1,0 +1,17 @@
+apiVersion: security.accuknox.com/v1
+kind: KubeArmorPolicy
+metadata:
+  name: mitre-tactic-defense-evasion-root-certificate
+spec:
+  selectorLabels:
+      nodeSelector:
+          hostname: xyz
+  file:
+    matchDirectories:
+    - dir: /usr/local/share/ca-certificates/*
+      recursive: true
+      readOnly: true
+    - path: /etc/ca-certificates.conf
+  action:
+    Audit 
+  severity: 4
