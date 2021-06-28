@@ -1,0 +1,24 @@
+apiVersion: security.accuknox.com/v1
+kind: KubeArmorPolicy
+metadata:
+  name: mitre-tactic-impact-data-destruction
+spec:
+  selectorLabels:
+      nodeSelector:
+          hostname: xyz 
+  process:
+    matchPaths: 
+    - path: /bin/rmdir
+      onDirectory:
+      	-path: /usr/bin/*
+      	-path: /usr/sbin/*
+      	-path: /bin/*
+    - path: /bin/rm
+      onDirectory:
+      	-path: /usr/bin/*
+      	-path: /usr/sbin/*
+      	-path: /bin/*
+  action:
+    Audit & Enforce
+  severity: 4
+
