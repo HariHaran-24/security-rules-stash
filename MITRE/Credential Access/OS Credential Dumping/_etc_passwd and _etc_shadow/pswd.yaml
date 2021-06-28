@@ -1,0 +1,16 @@
+apiVersion: security.accuknox.com/v1
+kind: KubeArmorPolicy
+metadata:
+  name: mitre-tactic-credential-access-password-dumping
+spec:
+  selectorLabels:
+      nodeSelector:
+          hostname: xyz 
+  process:
+    matchPaths: 
+    - path: /etc/passwd
+    - path: /etc/shadow
+  action:
+    Audit
+  severity: 4
+
