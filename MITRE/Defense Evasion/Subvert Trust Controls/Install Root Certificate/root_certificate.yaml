@@ -20,5 +20,5 @@ spec:
     - dir: /etc/ca-certificates.conf
       recursive: true
   action:
-    Audit 
+    BlockwithAudit 
   severity: 4
