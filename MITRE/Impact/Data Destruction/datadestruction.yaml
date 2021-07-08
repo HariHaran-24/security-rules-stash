@@ -5,7 +5,7 @@ metadata:
   namespace: multiubuntu
 spec:
   tags: ["MITRE"]
-  message: Impact-Data-Destruction
+  message: impact-data-destruction
   selector:
       matchLabels:
           container: ubuntu-1
