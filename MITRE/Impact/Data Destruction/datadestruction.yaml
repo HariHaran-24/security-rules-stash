@@ -24,5 +24,5 @@ spec:
     -dir: /etc/*
      recursive: true
   action:
-    BlockwithAudit
+    Audit
   severity: 4
